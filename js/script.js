@@ -118,7 +118,7 @@ const photos = [
     caption: "One of my favourite hobbies."
   },
   {
-    src: "images/IMG-20260919-WA0184.jpg",
+    src: "images/IMG-20260919-WA0009.jpg",
     alt: "Priscila with long braids in a floral dress, looking back over her shoulder beside a brick wall and trees",
     caption: "Exploring technology and web programming."
   }
