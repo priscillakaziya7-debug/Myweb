@@ -3,52 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priscila NAMSOKWE | Personal Website</title>
+    <meta name="description" content="Personal portfolio of Priscila Namusokwe, a student learning web technologies at Mulungushi University.">
+    <title>Priscila Namusokwe | Personal Website</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
-        <nav class="navbar">
-            <div class="logo">PRECILA<span>.</span></div>
-            <div class="nav-links">
+        <nav class="navbar" id="site-nav" aria-label="Main navigation">
+            <div class="logo">PRISCILA<span>.</span></div>
+            <button class="nav-toggle" id="nav-toggle" type="button"
+                    aria-expanded="false" aria-controls="nav-links" hidden>
+                Menu
+            </button>
+            <div class="nav-links" id="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#hobbies">Hobbies</a>
                 <a href="#learning">Learning</a>
+                <a href="#projects">Projects</a>
                 <a href="#photos">Photos</a>
                 <a href="#media">Media</a>
                 <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
-    <main>
+
+    <main id="main">
         <section id="home" class="hero">
             <div class="hero-content">
-                <p class="welcome">WELCOME TO MY WEBSITE </p>
+                <p class="welcome">WELCOME TO MY WEBSITE</p>
                 <h1>
                     Hello, I'm
-                    <span class="name">PRECILA NAMSOKWE</span>
+                    <span class="name">PRISCILA NAMUSOKWE</span>
                 </h1>
                 <h2>
-                    A Student Exploring
+                    A Computer Science Student Exploring
                     <span class="bouncing-word">Web Programming</span>
                 </h2>
                 <p class="intro">
-                    Hello World! This is my first HTML document.
-                    I am currently learning Introduction to Web Technologies.
+                    I am studying at Mulungushi University and currently learning
+                    Web Technologies (ICT251). This portfolio shows my work in
+                    HTML, CSS and JavaScript so far.
                 </p>
-                <a href="#about" class="btn">Explore My Page ↓</a>
+                <a href="#projects" class="btn">View My Projects ↓</a>
             </div>
             <div class="circle circle-one"></div>
             <div class="circle circle-two"></div>
         </section>
+
         <section id="about" class="section content-section">
             <h2 class="section-title">About Me</h2>
             <p class="section-text">
-                My name is PRECILA NAMSOKWE, and I am a student interested
+                My name is Priscila Namusokwe, and I am a student interested
                 in technology and web programming. I am currently learning
-                the fundamentals of web technologies, including HTML and CSS.
-                My goal is to improve my ability to create attractive,
+                the fundamentals of web technologies, including HTML, CSS and
+                JavaScript. My goal is to improve my ability to create attractive,
                 responsive and user-friendly websites. I enjoy learning new
                 skills, practising coding and discovering how websites work.
                 Through this course, I hope to develop the confidence and
@@ -61,6 +73,7 @@
                 Learn Web Development on MDN ↗
             </a>
         </section>
+
         <section id="hobbies" class="section content-section">
             <h2 class="section-title">My Hobbies</h2>
             <p class="section-text">
@@ -73,27 +86,28 @@
             </ul>
             <div class="hobby-container">
                 <div class="hobby-card">
-                    <div class="hobby-icon"></div>
+                    <div class="hobby-icon" aria-hidden="true">🎮</div>
                     <h3>Playing Games</h3>
                     <p>Enjoying games and exploring new experiences.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon"></div>
+                    <div class="hobby-icon" aria-hidden="true">📚</div>
                     <h3>Reading Books</h3>
                     <p>Learning new things through reading and studying.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon"> </div>
+                    <div class="hobby-icon" aria-hidden="true">🏃</div>
                     <h3>Exercising</h3>
                     <p>Staying active and working on personal growth.</p>
                 </div>
                 <div class="hobby-card">
-                    <div class="hobby-icon"></div>
+                    <div class="hobby-icon" aria-hidden="true">😴</div>
                     <h3>Sleeping</h3>
                     <p>If I'm not doing these, then I am probably sleeping!</p>
                 </div>
             </div>
         </section>
+
         <section id="learning" class="section content-section">
             <h2 class="section-title">My Learning Plan</h2>
             <p class="section-text">
@@ -112,9 +126,9 @@
                     <caption>My Weekly Web Learning Plan</caption>
                     <thead>
                         <tr>
-                            <th>Day</th>
-                            <th>Topic</th>
-                            <th>Practice Task</th>
+                            <th scope="col">Day</th>
+                            <th scope="col">Topic</th>
+                            <th scope="col">Practice Task</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -142,44 +156,68 @@
                 </table>
             </div>
         </section>
+
+        <section id="projects" class="section content-section">
+            <h2 class="section-title">Projects and Skills</h2>
+            <p class="section-text">
+                Here are some things I have learned and built in this course.
+                Type a word to filter them.
+            </p>
+            <div class="filter-bar">
+                <label for="project-search">Search projects</label>
+                <input type="search" id="project-search" placeholder="e.g. CSS, form, HTML">
+                <button type="button" id="project-reset" class="small-btn">Reset</button>
+            </div>
+            <p id="filter-message" class="filter-message" role="status" aria-live="polite"></p>
+            <div class="project-grid" id="project-grid">
+                <article class="project-card">
+                    <h3>Semantic HTML5 Website</h3>
+                    <p>My Activity 2 website uses header, nav, main, section and footer with a table, photos, video and audio.</p>
+                    <p class="tag">HTML</p>
+                </article>
+                <article class="project-card">
+                    <h3>Responsive CSS Design</h3>
+                    <p>I styled the whole site with external CSS, Grid, Flexbox and a media query so it works on phones and computers.</p>
+                    <p class="tag">CSS</p>
+                </article>
+                <article class="project-card">
+                    <h3>JavaScript Form Validation</h3>
+                    <p>I learned to check form input with functions and events, and to update the page using the DOM without reloading.</p>
+                    <p class="tag">JavaScript</p>
+                </article>
+            </div>
+        </section>
+
         <section id="photos" class="section content-section">
             <h2 class="section-title">My Photos</h2>
             <p class="section-text">
                 A small gallery of photos that represent my interests,
-                learning and daily activities.
+                learning and daily activities. Use the buttons to browse.
             </p>
-            <div class="photo-gallery">
-                <figure class="photo-card">
-                    <img src="C:\Users\justi\OneDrive\Desktop\Myweb\images\IMG-20251123-WA0154.jpg"
-                         alt="A photo of Priscila studying or learning">
-                    <figcaption>
-                        My learning journey and personal development.
-                    </figcaption>
-                </figure>
-                <figure class="photo-card">
-                    <img src="C:\Users\justi\OneDrive\Desktop\Myweb\images\IMG-20260914-WA0055.jpg"
-                         alt="A photo showing one of Priscila's hobbies">
-                    <figcaption>One of my favourite hobbies.</figcaption>
-                </figure>
-                <figure class="photo-card">
-                    <img src="C:\Users\justi\OneDrive\Desktop\Myweb\images\IMG-20260919-WA0184.jpg"
-                         alt="A photo representing technology or web programming">
-                    <figcaption>
-                        Exploring technology and web programming.
-                    </figcaption>
-                </figure>
+            <figure class="photo-viewer">
+                <img id="viewer-img" src="images/IMG-20251123-WA0154.jpg"
+                     alt="Priscila smiling, standing under a green tree beside a white building, wearing a peach blouse and black skirt">
+                <figcaption id="viewer-caption">
+                    My learning journey and personal development.
+                </figcaption>
+            </figure>
+            <div class="viewer-controls">
+                <button type="button" id="prev-photo" class="small-btn">← Previous</button>
+                <span id="photo-counter" class="photo-counter" aria-live="polite">Photo 1 of 3</span>
+                <button type="button" id="next-photo" class="small-btn">Next →</button>
             </div>
             <p class="media-note">
                 All photos used in this gallery are my own photographs
                 or photographs that I have permission to share.
             </p>
         </section>
+
         <section id="media" class="section content-section">
             <h2 class="section-title">My Media</h2>
             <div class="media-card">
                 <h3 class="subheading">My Self-Introduction Video</h3>
-                <video controls>
-                    <source src="videos\VID-20260928-WA0141.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="videos/VID-20260928-WA0141.mp4" type="video/mp4">
                     Your browser does not support the video element.
                 </video>
                 <p class="media-description">
@@ -195,8 +233,9 @@
             </div>
             <div class="media-card">
                 <h3 class="subheading">My Audio Recording</h3>
-                <audio controls>
-                    <source src="videos\20260928_220404.aac" type="audio/mpeg">
+                <audio controls preload="none">
+                    <source src="videos/20260928_220404.aac" type="audio/aac">
+                    <source src="videos/20260928_220404.aac" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <p class="media-description">
@@ -205,51 +244,57 @@
                 </p>
             </div>
         </section>
+
         <section id="contact" class="section content-section">
             <h2 class="section-title">Contact Me</h2>
             <p class="section-text">
-                Use the form below to practise submitting information.
-                This form is a browser demonstration only and does not send
-                data to a server.
+                <strong>Browser demonstration only — no message is sent.</strong>
+                The form checks your input and shows a preview on this page.
             </p>
-            <form action="#" method="post" class="contact-form">
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name"
-                           placeholder="Enter your name" required>
+                           placeholder="Enter your name" autocomplete="name" required>
+                    <span class="error" id="name-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email"
-                           placeholder="Enter your email" required>
+                           placeholder="Enter your email" autocomplete="email" required>
+                    <span class="error" id="email-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="topic">Topic</label>
                     <select id="topic" name="topic">
                         <option value="">Select a topic</option>
-                        <option value="web-development">Web Development</option>
-                        <option value="learning">Learning</option>
-                        <option value="general">General Message</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Learning">Learning</option>
+                        <option value="General Message">General Message</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="6"
-                              placeholder="Write your message here..."
-                              required></textarea>
+                              placeholder="Write your message here..." required></textarea>
+                    <span class="error" id="message-error"></span>
                 </div>
-                <button type="submit" class="submit-btn">
-                    Submit Message
-                </button>
+                <button type="submit" class="submit-btn">Validate Form</button>
             </form>
+            <div id="form-summary" class="form-summary" role="status" aria-live="polite" hidden></div>
             <p class="form-note">
                 Note: This is a demonstration form. It does not send or store messages.
             </p>
         </section>
     </main>
+
     <footer>
-        <p>© 2026 Emmanuel Mwamba. All Rights Reserved.</p>
-        <p>Built with HTML &amp; CSS </p>
+        <p>© 2026 Priscila Namusokwe. All Rights Reserved.</p>
+        <p>Built with HTML, CSS &amp; JavaScript | ICT251 Web Technologies, Mulungushi University</p>
+        <p>
+            <a href="https://github.com/priscillakaziya7-debug/Myweb" target="_blank" rel="noopener noreferrer">View Source on GitHub</a>
+            | <a href="#home">Back to top</a>
+        </p>
     </footer>
 </body>
 </html>
